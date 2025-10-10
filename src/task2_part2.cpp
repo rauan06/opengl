@@ -219,13 +219,13 @@ void init()
     
     // Create creative shapes
     std::vector<float> goldColor = {1.0f, 0.84f, 0.0f};
-    createStar(-0.4f, 0.4f, 0.15f, 0.08f, goldColor); // Golden star
+    createStar(-0.4f, 0.4f, 0.4f, 0.08f, goldColor); // Golden star
     
     std::vector<float> centerColor = {0.5f, 0.0f, 1.0f}; // Purple center
     std::vector<float> edgeColor = {0.0f, 1.0f, 1.0f};   // Cyan edges
-    createHexagon(0.4f, 0.4f, 0.15f, centerColor, edgeColor); // Color-gradient hexagon
+    createHexagon(0.4f, 0.4f, 0.4f, centerColor, edgeColor); // Color-gradient hexagon
     
-    createSpiral(0.0f, -0.3f, 0.25f, 3); // Rainbow spiral
+    createSpiral(0.0f, -0.3f, 0.4f, 3); // Rainbow spiral
 }
 
 int main(int argc, char** argv)

@@ -1,35 +1,4 @@
-# OpenGL Assignment 1 - Implementation Report
-
-## Task 1: Getting Started
-
-### Program 1: Red Triangle (`red_triangle.cpp`)
-**Implementation Steps:**
-1. **OpenGL Setup**: Initialized GLUT, GLEW, and created a 500x500 window
-2. **Shader Creation**: 
-   - Vertex shader: Handles position and color attributes using `vPosition` and `vColor`
-   - Fragment shader: Outputs interpolated vertex colors
-3. **Triangle Definition**: Created 3 vertices with red color (1.0, 0.0, 0.0)
-4. **Rendering**: Used `GL_TRIANGLES` primitive to draw the triangle
-
-**Key Features:**
-- Modern OpenGL 3.3+ with shader-based rendering
-- VAO/VBO for efficient vertex data management
-- Color interpolation across triangle surface
-
-### Program 2: Blue Square (`blue_square.cpp`)
-**Implementation Steps:**
-1. **Square Geometry**: Defined 4 vertices forming a square using normalized coordinates
-2. **Color Assignment**: All vertices colored blue (0.0, 0.0, 1.0)
-3. **Rendering Method**: Used `GL_TRIANGLE_STRIP` for efficient square rendering
-4. **Window Setup**: Same 500x500 window configuration as triangle program
-
-### Program 3: Modified Red Triangle (Task Requirement)
-**Modifications Made:**
-1. **Line 1**: Changed window title from "Red Triangle" to "Blue Square"
-2. **Line 2**: Replaced triangle vertices with square vertices
-3. **Line 3**: Changed drawing mode from `GL_TRIANGLES` to `GL_TRIANGLE_STRIP`
-
-**Result**: The modified program now displays a blue square that fits inside the window, meeting the requirement of "about 3 lines of code changes."
+# OpenGL Assignment - Implementation Report
 
 ## Task 2: Drawing 2D Polygons with Color
 
@@ -55,16 +24,16 @@
 **Implementation:**
 - Generated circle using parametric equations with 50 segments
 - Center vertex with dark red color (0.3, 0.0, 0.0)
-- Edge vertices with varying red intensity: `0.5 + 0.5 * cos(angle)`
-- Creates radial shading effect from dark center to bright edges
+- Edge vertices with varying red intensity: `0.5 + 0.5 * sin(-(angle - π/2 - 10))`
+- Creates complex shading effect with offset and phase shift
 - Rendered using `GL_TRIANGLE_FAN`
 
 #### Nested Black and White Squares (Bottom Center)
 **Implementation:**
-- Created 4 concentric squares with decreasing sizes
-- Alternating colors: white, black, white, black
+- Created 6 concentric squares with decreasing sizes
+- Alternating colors: white, black, white, black, white, black
 - Each square rendered as `GL_TRIANGLE_STRIP`
-- Size progression: 100%, 80%, 60%, 40% of original size
+- Size progression: 100%, 83%, 66%, 49%, 32%, 15% of original size
 
 ### Part 2: Creative Geometric Art (`task2_part2.cpp`)
 

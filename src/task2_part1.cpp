@@ -115,7 +115,7 @@ void createShadedCircle(float centerX, float centerY, float radius)
         float y = centerY + radius * sin(angle);
         
         // Vary red color based on angle for shading effect
-        float redIntensity = 0.5f + 0.5f * cos(angle);
+        float redIntensity = 0.5f + 0.5f * sin(-(angle - M_PI/2 - 10));
         vertices.insert(vertices.end(), {x, y, 0.0f, redIntensity, 0.0f, 0.0f});
     }
     
@@ -138,11 +138,11 @@ void createNestedSquares(float centerX, float centerY, float size)
 {
     std::vector<float> vertices;
     
-    // Create 4 nested squares (white, black, white, black from outside to inside)
-    float sizes[] = {size, size * 0.8f, size * 0.6f, size * 0.4f};
-    float colors[][3] = {{1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f}};
+    // Create 6 nested squares (white, black, white, black, white, black from outside to inside)
+    float sizes[] = {size, size*0.83f , size * 0.66f, size * 0.49f, size * 0.32f, size * 0.15f};
+    float colors[][3] = {{1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f}};
     
-    for (int s = 0; s < 4; s++)
+    for (int s = 0; s < 6; s++)
     {
         float currentSize = sizes[s];
         float halfSize = currentSize / 2.0f;
@@ -192,7 +192,7 @@ void display()
     
     // Draw nested squares (bottom center)
     glBindVertexArray(squaresVAO);
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 6; i++)
     {
         glDrawArrays(GL_TRIANGLE_STRIP, i * 4, 4);
     }
@@ -259,10 +259,10 @@ void init()
     
     // Create shapes
     std::vector<float> redColor = {1.0f, 0.0f, 0.0f};
-    createEllipse(-0.4f, 0.3f, 0.15f, 0.1f, redColor); // Red ellipse (scaled y to 60%)
-    createColorTriangle(0.0f, 0.3f, 0.15f); // Color-interpolated triangle
-    createShadedCircle(0.4f, 0.3f, 0.15f); // Shaded red circle
-    createNestedSquares(0.0f, -0.3f, 0.3f); // Nested squares
+    createEllipse(-0.6f, 0.75f, 0.2f, 0.1f, redColor); // Red ellipse (scaled y to 60%)
+    createColorTriangle(0.0f, 0.75f, 0.25f); // Color-interpolated triangle
+    createShadedCircle(0.6f, 0.75f, 0.2f); // Shaded red circle
+    createNestedSquares(0.0f, -0.2f, 1.2f); // Nested squares
 }
 
 int main(int argc, char** argv)

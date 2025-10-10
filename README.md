@@ -23,12 +23,12 @@ sudo pacman -S base-devel glew freeglut
 
 ## Programs Included
 
-### Task 1: Basic Shapes
+### Assignment 1: Basic Shapes
 1. **red_triangle** - Displays a single red triangle using GL_TRIANGLES
 2. **blue_square** - Displays a single blue square using GL_TRIANGLE_STRIP
 3. **Modified red_triangle** - Modified to display a blue square (as required)
 
-### Task 2: Complex Shapes
+### Assignment 1: Complex Shapes
 1. **task2_part1** - Creates a complex composition with:
    - Red ellipse (top left) - using parametric equations with y-axis scaled to 60%
    - Color-interpolated triangle (top center) - red, green, blue vertices
@@ -39,6 +39,26 @@ sudo pacman -S base-devel glew freeglut
    - Golden star (top left) - 5-pointed star with filled triangles
    - Color-gradient hexagon (top right) - purple center to cyan edges
    - Rainbow spiral (bottom center) - logarithmic spiral with color variation
+
+### Assignment 2: Interaction, Windows, Menus and Animation
+**assignment2_interaction** - Advanced interactive program featuring:
+- **Main Window**: Black & white nested squares with rotation animation
+- **Subwindow**: Red ellipse with customizable background colors via menu
+- **Window 2**: Circle and triangle with keyboard color controls (r,g,b,y,o,p,w)
+- **Animations**: Counter-clockwise square rotation, clockwise triangle rotation, breathing circle
+- **Interactive Features**: Left-click to create random colored breathing circles
+- **Menu System**: Right-click menus for animation control and color changes
+
+### Assignment 3: 3D Transformations and Geometry
+**assignment3_3d_cube** - 3D colored cube with transformation controls:
+- **3D Cube**: Six faces with distinct colors (red, green, blue, yellow, magenta, cyan)
+- **Transformations**: Scale, Rotate, Translate with independent X,Y,Z controls
+- **Keyboard Controls**: 
+  - Q/A, W/S, E/D for X/Y/Z axis transformations
+  - R/F for delta (step size) adjustment
+  - T for reset all transformations
+- **Menu System**: Right-click to select transformation type (SCALE/ROTATE/TRANSLATE)
+- **Depth Testing**: Proper 3D rendering with depth buffer
 
 ## Compilation and Usage
 
@@ -53,6 +73,8 @@ make red_triangle
 make blue_square
 make task2_part1
 make task2_part2
+make assignment2_interaction
+make assignment3_3d_cube
 ```
 
 ### Run Programs
@@ -61,6 +83,8 @@ make task2_part2
 ./blue_square
 ./task2_part1
 ./task2_part2
+./assignment2_interaction
+./assignment3_3d_cube
 ```
 
 ### Clean Build Files
@@ -91,14 +115,16 @@ All programs use modern OpenGL with:
 ## File Structure
 ```
 c_plus/
-├── Makefile              # Build configuration
-├── README.md             # This file
+├── Makefile                    # Build configuration
+├── README.md                   # This file
 ├── src/
-│   ├── red_triangle.cpp  # Task 1: Red triangle
-│   ├── blue_square.cpp   # Task 1: Blue square
-│   ├── task2_part1.cpp   # Task 2: Complex shapes
-│   └── task2_part2.cpp   # Task 2: Creative shapes
-└── report.md             # Implementation report
+│   ├── red_triangle.cpp        # Assignment 1: Red triangle
+│   ├── blue_square.cpp         # Assignment 1: Blue square
+│   ├── task2_part1.cpp         # Assignment 1: Complex shapes
+│   ├── task2_part2.cpp         # Assignment 1: Creative shapes
+│   ├── assignment2_interaction.cpp  # Assignment 2: Interactive program
+│   └── assignment3_3d_cube.cpp      # Assignment 3: 3D cube
+└── report.md                   # Implementation report
 ```
 
 ## Testing

@@ -7,7 +7,6 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #endif
-#include <iostream>
 #include <cmath>
 #include <vector>
 #include <cstdlib>

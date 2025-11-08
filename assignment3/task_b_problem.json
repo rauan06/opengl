@@ -1,0 +1,12 @@
+{
+  "description": "Task B: Cloud Provider Problem (after substitution M = M' + 10)",
+  "c": [6, 8, 10],
+  "A": [
+    [2, 3, 5],
+    [4, 2, 5],
+    [3, 2, 4]
+  ],
+  "b": [120, 160, 140],
+  "note": "Original problem has M >= 10. After substitution M = M' + 10, the constraints become as shown. Final M = M' + 10."
+}
+
